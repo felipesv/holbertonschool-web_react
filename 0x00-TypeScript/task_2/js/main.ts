@@ -65,14 +65,8 @@ export function executeWork(employee: DirectorInterface | TeacherInterface): str
 type Subjects = 'Math' | 'History';
 
 export function teachClass(todayClass: Subjects): string{
-  switch (todayClass) {
-    case "Math":
-      return 'Teaching Math';
-      break;
-    case "History":
-      return 'Teaching History';
-      break;
-  }
+  if (todayClass === 'Math') return 'Teaching Math';
+  else if (todayClass === 'History') return 'Teaching History';
 }
 
 /* TESTS
