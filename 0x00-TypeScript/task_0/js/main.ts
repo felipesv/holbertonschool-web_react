@@ -10,30 +10,33 @@ const student2 = { firstName: 'Alexa', lastName: 'Robertson', age: 45, location:
 const studentsList: Array<Student> = [student1, student2];
 
 /* Vanilla JS */
-const table = document.createElement('table');
-document.body.appendChild(table);
+const body: HTMLBodyElement = document.getElementsByTagName("body")[0];
 
-const thead = document.createElement('thead');
+const table: HTMLTableElement = document.createElement('table');
+body.appendChild(table);
+
+const thead: HTMLTableSectionElement = document.createElement('thead');
 table.appendChild(thead);
 
-const tbody = document.createElement('tbody');
+const tbody: HTMLTableSectionElement = document.createElement('tbody');
 table.appendChild(tbody)
 
-const tr = document.createElement('tr');
+const tr: HTMLTableRowElement = document.createElement('tr');
 thead.appendChild(tr);
 
-const thFields = ['firstName', 'location'];
-thFields.forEach(element => {
-  const th = document.createElement('th');
-  th.innerHTML = element;
-  tr.appendChild(th);
-});
+const th1: HTMLTableCellElement = document.createElement('th');
+th1.innerHTML = 'firstName';
+tr.appendChild(th1);
+
+const th2: HTMLTableCellElement = document.createElement('th');
+th2.innerHTML = 'location';
+tr.appendChild(th2);
 
 studentsList.forEach(element => {
-  const trTb = document.createElement('tr');
+  const trTb: HTMLTableRowElement = document.createElement('tr');
   tbody.appendChild(trTb);
 
-  let td = document.createElement('td');
+  let td: HTMLTableCellElement = document.createElement('td');
   td.innerHTML = element.firstName;
   trTb.appendChild(td);
 
