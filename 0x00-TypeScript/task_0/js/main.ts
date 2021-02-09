@@ -22,7 +22,7 @@ table.appendChild(tbody)
 const tr = document.createElement('tr');
 thead.appendChild(tr);
 
-const thFields = ['firstName', 'lastName', 'age', 'location'];
+const thFields = ['firstName', 'location'];
 thFields.forEach(element => {
   const th = document.createElement('th');
   th.innerHTML = element;
@@ -35,14 +35,6 @@ studentsList.forEach(element => {
 
   let td = document.createElement('td');
   td.innerHTML = element.firstName;
-  trTb.appendChild(td);
-
-  td = document.createElement('td');
-  td.innerHTML = element.lastName;
-  trTb.appendChild(td);
-
-  td = document.createElement('td');
-  td.innerHTML = element.age.toString();
   trTb.appendChild(td);
 
   td = document.createElement('td');
