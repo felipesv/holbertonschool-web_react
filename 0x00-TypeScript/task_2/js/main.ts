@@ -74,9 +74,6 @@ export function teachClass(todayClass: Subjects): string {
   }
 }
 
-console.log(teachClass('Math'));
-console.log(teachClass('History'));
-
 /* TESTS
 console.log(createEmployee(200));
 console.log(createEmployee(1000));
