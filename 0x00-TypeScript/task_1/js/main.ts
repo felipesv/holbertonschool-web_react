@@ -22,11 +22,9 @@ interface PrintTeacherFunction {
   (firstName: string, lastName: string): string;
 }
 
-function printFullName(firstName: string, lastName: string): string {
+export const printTeacher: PrintTeacherFunction = function (firstName: string, lastName: string): string {
   return `${firstName.charAt(0)}. ${lastName}`;
-}
-
-export const printTeacher: PrintTeacherFunction = printFullName;
+};
 
 /* Task 4 */
 interface Student {
