@@ -62,15 +62,13 @@ export function executeWork(employee: DirectorInterface | TeacherInterface): str
 }
 
 /* Task 7 */
-type Subjects = 'Math' | 'History';
+type Subjects = "Math" | "History";
 
-export function teachClass(todayClass: Subjects): string {
-  if (todayClass === 'Math') {
-    console.log('Teaching Math');
-    return 'Teaching Math';
-  } else if (todayClass === 'History') {
-    console.log('Teaching History');
-    return 'Teaching History';
+export function teachClass(todayClass:Subjects): string {
+  if (todayClass === "Math") {
+    return "Teaching Math";
+  } else if (todayClass === "History") {
+    return "Teaching History";
   }
 }
 
