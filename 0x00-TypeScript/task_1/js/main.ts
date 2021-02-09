@@ -77,5 +77,5 @@ const director1: Directors = {
   numberOfReports: 17,
 };
 console.log(director1);
-*/
-console.log(printTeacher("Jhon", "Doe"));
+
+console.log(printTeacher("Jhon", "Doe"));*/
