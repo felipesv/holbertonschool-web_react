@@ -42,7 +42,7 @@ interface StudentConstructor{
 }
 
 /* eslint-disable @typescript-eslint/no-unused-vars */
-class StudentClass implements Student{
+export class StudentClass implements Student{
   firstName: string;
   lastName: string;
 
