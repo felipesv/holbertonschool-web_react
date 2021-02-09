@@ -23,7 +23,7 @@ interface PrintTeacherFunction {
   lastName: string;
 }
 
-function printTeacher(TeacherFn: PrintTeacherFunction): string {
+export function printTeacher(TeacherFn: PrintTeacherFunction): string {
   return `${TeacherFn.firstName.charAt(0)}. ${TeacherFn.lastName}`;
 }
 
