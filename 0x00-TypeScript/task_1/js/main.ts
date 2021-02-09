@@ -81,8 +81,8 @@ const director1: Directors = {
 };
 console.log(director1);
 
-console.log(printTeacher("Jhon", "Doe"));*/
+console.log(printTeacher("Jhon", "Doe"));
 
 const student = new StudentClass("Jhon", "Doe");
 console.log(student.workOnHomework());
-console.log(student.displayName());
+console.log(student.displayName());*/
