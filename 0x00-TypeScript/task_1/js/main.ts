@@ -19,13 +19,14 @@ interface Directors extends Teacher {
 
 /* Task 3 */
 interface PrintTeacherFunction {
-  firstName: string;
-  lastName: string;
+  (firstName: string, lastName: string): string;
 }
 
-export function printTeacher(TeacherFn: PrintTeacherFunction): string {
-  return `${TeacherFn.firstName.charAt(0)}. ${TeacherFn.lastName}`;
+function printFullName(firstName: string, lastName: string): string {
+  return `${firstName.charAt(0)}. ${lastName}`;
 }
+
+export const printTeacher: PrintTeacherFunction = printFullName;
 
 /* Task 4 */
 interface Student {
@@ -76,10 +77,5 @@ const director1: Directors = {
   numberOfReports: 17,
 };
 console.log(director1);
-
-const funct: PrintTeacherFunction = {
-  firstName: 'John',
-  lastName: 'Doe',
-};
-
-console.log(printTeacher(funct));*/
+*/
+console.log(printTeacher("Jhon", "Doe"));
