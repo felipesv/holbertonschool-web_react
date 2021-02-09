@@ -30,14 +30,14 @@ export const printTeacher: printTeacherFunction = printFullName;
 /* eslint-enable @typescript-eslint/class-name-casing */
 
 /* Task 4 */
-interface Student {
+export interface Student {
   firstName: string;
   lastName: string;
   workOnHomework(): string;
   displayName(): string;
 }
 
-interface StudentConstructor{
+export interface StudentConstructor{
   new(firstName: string, lastName: string): Student;
 }
 
