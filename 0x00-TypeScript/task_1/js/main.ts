@@ -1,6 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-/* eslint-disable @typescript-eslint/no-unused-vars */
-
 /* Task 1 */
 interface Teacher {
   readonly firstName: string;
@@ -8,7 +5,9 @@ interface Teacher {
   fullTimeEmployee: boolean;
   yearsOfExperience?: number;
   location: string;
+  /* eslint-disable @typescript-eslint/no-explicit-any */
   [propName: string]: any;
+  /* eslint-enable @typescript-eslint/no-explicit-any */
 }
 
 /* Task 2 */
@@ -22,11 +21,12 @@ interface PrintTeacherFunction {
   (firstName: string, lastName: string): string;
 }
 
-function printFullName(firstName: string, lastName: string): string {
+export const printTeacher: PrintTeacherFunction = function (
+  firstName: string,
+  lastName: string
+): string {
   return `${firstName.charAt(0)}. ${lastName}`;
-}
-
-const printTeacher: PrintTeacherFunction = printFullName;
+};
 
 /* Task 4 */
 interface Student {
@@ -40,6 +40,7 @@ interface StudentConstructor{
   new(firstName: string, lastName: string): Student;
 }
 
+/* eslint-disable @typescript-eslint/no-unused-vars */
 class StudentClass implements Student{
   firstName: string;
   lastName: string;
@@ -57,6 +58,7 @@ class StudentClass implements Student{
     return this.firstName;
   }
 }
+/* eslint-enable @typescript-eslint/no-unused-vars */
 
 /* TESTS
 const teacher3: Teacher = {
@@ -77,5 +79,5 @@ const director1: Directors = {
   numberOfReports: 17,
 };
 console.log(director1);
-
-console.log(printTeacher("Jhon", "Doe"));*/
+*/
+console.log(printTeacher("Jhon", "Doe"));
