@@ -66,11 +66,16 @@ type Subjects = 'Math' | 'History';
 
 export function teachClass(todayClass: Subjects): string {
   if (todayClass === 'Math') {
+    console.log('Teaching Math');
     return 'Teaching Math';
   } else if (todayClass === 'History') {
+    console.log('Teaching History');
     return 'Teaching History';
   }
 }
+
+console.log(teachClass('Math'));
+console.log(teachClass('History'));
 
 /* TESTS
 console.log(createEmployee(200));
