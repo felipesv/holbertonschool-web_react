@@ -17,16 +17,17 @@ interface Directors extends Teacher {
 
 
 /* Task 3 */
-interface PrintTeacherFunction {
+/* eslint-disable @typescript-eslint/class-name-casing */
+interface printTeacherFunction {
   (firstName: string, lastName: string): string;
 }
 
-export const printTeacher: PrintTeacherFunction = function (
-  firstName: string,
-  lastName: string
-): string {
+function printFullName(firstName: string, lastName: string): string {
   return `${firstName.charAt(0)}. ${lastName}`;
-};
+}
+
+export const printTeacher: printTeacherFunction = printFullName;
+/* eslint-enable @typescript-eslint/class-name-casing */
 
 /* Task 4 */
 interface Student {
@@ -79,5 +80,5 @@ const director1: Directors = {
   numberOfReports: 17,
 };
 console.log(director1);
-*/
-console.log(printTeacher("Jhon", "Doe"));
+
+console.log(printTeacher("Jhon", "Doe"));*/
