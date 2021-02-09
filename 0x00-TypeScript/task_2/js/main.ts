@@ -51,9 +51,14 @@ export function isDirector(employee: DirectorInterface | TeacherInterface): empl
   return (employee as Director).workDirectorTasks !== undefined;
 }
 
-export function executeWork(employee: DirectorInterface | TeacherInterface): void {
-  if (isDirector(employee)) console.log(employee.workDirectorTasks());
-  else console.log(employee.workTeacherTasks());
+export function executeWork(employee: DirectorInterface | TeacherInterface): string {
+  if (isDirector(employee)) {
+    console.log(employee.workDirectorTasks());
+    return employee.workDirectorTasks();
+  }
+  
+  console.log(employee.workTeacherTasks());
+  return employee.workTeacherTasks();
 }
 
 /* Task 7 */
