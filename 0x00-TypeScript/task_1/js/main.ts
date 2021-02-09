@@ -33,8 +33,8 @@ export const printTeacher: printTeacherFunction = printFullName;
 interface Student {
   firstName: string;
   lastName: string;
-  workOnHomework: () => string;
-  displayName: () => string;
+  workOnHomework(): string;
+  displayName(): string;
 }
 
 interface StudentConstructor{
@@ -82,3 +82,7 @@ const director1: Directors = {
 console.log(director1);
 
 console.log(printTeacher("Jhon", "Doe"));*/
+
+const student = new StudentClass("Jhon", "Doe");
+console.log(student.workOnHomework());
+console.log(student.displayName());
