@@ -1,9 +1,8 @@
-type Major = { _brand: "Major" };
-export interface MajorCredits extends Major{
+export interface MajorCredits {
+  __majorBrand: void;
   credits: number;
 }
 
-type Minor = { _brand: "Minor" };
 export interface MinorCredits {
   __minorBrand: void;
   credits: number;
