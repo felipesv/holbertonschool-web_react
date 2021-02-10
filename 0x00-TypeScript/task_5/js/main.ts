@@ -1,10 +1,10 @@
 export interface MajorCredits {
-  _majorBrand: void;
+  __majorBrand: void;
   credits: number;
 }
 
 export interface MinorCredits {
-  _minorBrand: void;
+  __minorBrand: void;
   credits: number;
 }
 
