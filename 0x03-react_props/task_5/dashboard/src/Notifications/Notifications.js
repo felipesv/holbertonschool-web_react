@@ -24,7 +24,7 @@ const Notifications = ({ displayDrawer, listNotifications }) => {
   }
 
   return (
-    <div class="notification-container">
+    <div className="notification-container">
       <div className="menuItem">Your notifications</div>
       { displayDrawer ?
         (<div className="Notifications">

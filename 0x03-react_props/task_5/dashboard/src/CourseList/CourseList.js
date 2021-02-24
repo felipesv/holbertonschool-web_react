@@ -7,7 +7,7 @@ import CourseShape from "./CourseShape";
 function CourseList({ listCourses }) {
 
   return (
-    <div class="container-course">
+    <div className="container-course">
       <table id='CourseList'>
         <thead>
           <CourseListRow isHeader={true} textFirstCell="Available courses"></CourseListRow>

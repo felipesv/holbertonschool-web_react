@@ -5,7 +5,7 @@ import CourseListRow from './CourseListRow';
 function CourseList() {
 
   return (
-    <div class="container-course">
+    <div className="container-course">
       <table id='CourseList'>
         <thead>
           <CourseListRow isHeader={true} textFirstCell="Available courses"></CourseListRow>
