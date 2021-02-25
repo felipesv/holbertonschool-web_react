@@ -15,7 +15,7 @@ const Notifications = ({ displayDrawer, listNotifications }) => {
     border: 'none',
     display: 'flex',
     width: '100%',
-    'justify-content': 'flex-end',
+    justifyContent: 'flex-end',
   };
 
   const imgStyle = {
