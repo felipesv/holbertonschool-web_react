@@ -4,7 +4,6 @@ import NotificationItem from './NotificationItem';
 import PropTypes from 'prop-types'; // ES6
 import NotificationItemShape from './NotificationItemShape';
 import { StyleSheet, css } from 'aphrodite';
-import './Notifications.css'
 
 const btnStyle = {
   top: '1em',
