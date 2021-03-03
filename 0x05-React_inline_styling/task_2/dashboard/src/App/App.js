@@ -58,7 +58,9 @@ class App extends React.Component {
               <p>Some news</p>
             </BodySection>
           </div>
-          <Footer></Footer>
+          <div className={css(style.appFooter)}>
+            <Footer></Footer>
+          </div>
         </div>
       </React.Fragment>
     );
@@ -80,6 +82,15 @@ const style = StyleSheet.create({
     backgroundColor: '#fff',
     padding: '4rem',
     minHeight: '26rem',
+  },
+  appFooter: {
+    backgroundColor: '#fff',
+    textAlign: 'center',
+    width: '100%',
+    bottom: '0px',
+    borderTop: '3px solid #e1354b',
+    fontStyle: 'italic',
+    padding: '1rem 0'
   }
 });
 
