@@ -30,7 +30,7 @@ class Notifications extends React.Component {
   render() {
     return (
       <div className={css(style.notificationContainer, style.mediumNotificationContainer)}>
-        <div className={css(style.menuItem)} id="menuItem">Your notifications</div>
+        <div className={css(style.menuItem, this.props.displayDrawer ? style.hideElement: '')} id="menuItem">Your notifications</div>
         { this.props.displayDrawer ?
           (<div className={css(style.notifications, style.mediumNotification)} id="notifications">
             <button style={btnStyle} aria-label='Close' onClick={() => console.log('Close button has been clicked')}>
@@ -63,6 +63,32 @@ Notifications.defaultProps = {
   listNotifications: []
 };
 
+const opacityKeyframes = {
+  'from': {
+    opacity: 0.5,
+  },
+
+  'to': {
+      opacity: 1,
+  }
+};
+
+const translateKeyframes = {
+  '0%': {
+      transform: 'translateY(0)',
+  },
+
+  '50%': {
+      transform: 'translateY(-5px)',
+  },
+  '75%': {
+    transform: 'translateY(5px)',
+  },
+  '100%': {
+      transform: 'translateY(0)',
+  },
+};
+
 const style = StyleSheet.create({
   notifications: {
     border: '3px dashed #e1354b',
@@ -81,7 +107,15 @@ const style = StyleSheet.create({
   },
   menuItem: {
     marginBottom: '10px',
+    float: 'right',
     textAlign: 'end',
+    backgroundColor: '#fff8f8',
+    cursor: 'pointer',
+    ':hover': {
+      animationName: [opacityKeyframes, translateKeyframes],
+      animationDuration: '1s, 0.5s',
+      animationIterationCount: '3',
+    }
   },
   notificationContainer: {
     display: 'flex',
@@ -101,9 +135,7 @@ const style = StyleSheet.create({
     }
   },
   hideElement: {
-    '@media (max-width: 900px)': {
-      display: 'none',
-    }
+    display: 'none',
   },
   mediumUl: {
     '@media (max-width: 900px)': {
@@ -112,6 +144,5 @@ const style = StyleSheet.create({
     }
   }
 });
-
 
 export default Notifications;
