@@ -21,6 +21,11 @@ const imgStyle = {
 }
 
 class Notifications extends React.Component {
+  constructor(props) {
+    super(props);
+    this.markAsRead = this.markAsRead.bind(this);
+  }
+
   shouldComponentUpdate(nextProps) {
     // returns true render will be invoked
     if (this.props.listNotifications.length < nextProps.listNotifications.length) return true;
