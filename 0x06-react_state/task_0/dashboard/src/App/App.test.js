@@ -53,7 +53,12 @@ describe('Test App.js', () => {
     done();
   });
 
-  it('verify that the default state for displayDrawer is false. Verify that after calling handleDisplayDrawer, the state should now be true', (done) => {
+  it('verify that the default state for displayDrawer is false', () => {
+    const wrapper = shallow(<App />);
+    expect(wrapper.state().displayDrawer).toEqual(false);
+  });
+
+  it('verify that after calling handleDisplayDrawer, the state should now be true', (done) => {
     const wrapper = shallow(<App/>);
     expectChai(wrapper.state().displayDrawer).to.equal(false);
     wrapper.instance().handleDisplayDrawer();
