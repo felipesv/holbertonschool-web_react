@@ -45,11 +45,11 @@ describe('Test App.js', () => {
   });
 
   it('verify that when the keys "control" and "h" are pressed the "logOut" function is called', (done) => {
-    const logOut = jest.fn(() => void (0));
-    shallow(<App />);
-    window.alert = logOut;
+    const logSpy = jest.fn();
+    const wrapper = shallow(<App logOut={logSpy} />);
+    window.alert = jest.fn();
     events.keydown({ keyCode: 72, ctrlKey: true });
-    expect(logOut).toHaveBeenCalled()
+    expect(logSpy).toHaveBeenCalled()
     done();
   });
 

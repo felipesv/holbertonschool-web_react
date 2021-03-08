@@ -51,6 +51,10 @@ class App extends React.Component {
     this.setState({ displayDrawer: false });
   }
 
+  componentWillUnmount() {
+    document.removeEventListener("keydown", this.handleClick);
+  }
+
   render() {
     return (
       <React.Fragment>
