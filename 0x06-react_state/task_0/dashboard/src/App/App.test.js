@@ -54,7 +54,7 @@ describe('Test App.js', () => {
   });
 
   it('verify that the default state for displayDrawer is false. Verify that after calling handleDisplayDrawer, the state should now be true', (done) => {
-    const wrapper = mount(<App/>);
+    const wrapper = shallow(<App/>);
     expectChai(wrapper.state().displayDrawer).to.equal(false);
     wrapper.instance().handleDisplayDrawer();
     expectChai(wrapper.state().displayDrawer).to.equal(true);
@@ -62,7 +62,7 @@ describe('Test App.js', () => {
   });
 
   it('verify that after calling handleHideDrawer, the state is updated to be false', (done) => {
-    const wrapper = mount(<App/>);
+    const wrapper = shallow(<App/>);
     expectChai(wrapper.state().displayDrawer).to.equal(false);
     wrapper.instance().handleDisplayDrawer();
     expectChai(wrapper.state().displayDrawer).to.equal(true);
