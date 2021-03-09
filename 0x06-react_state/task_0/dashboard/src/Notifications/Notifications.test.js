@@ -135,9 +135,10 @@ describe('Test Notification.js', () => {
   it('verify that clicking on the button calls handleHideDrawer', (done) => {
     const handleDisplayDrawer = jest.fn();
     const handleHideDrawer = jest.fn();
-    const wrapper = shallow(<Notifications displayDrawer={false} handleDisplayDrawer={handleDisplayDrawer} handleHideDrawer={handleHideDrawer} />);
+    const wrapper = shallow(<Notifications displayDrawer handleDisplayDrawer={handleDisplayDrawer} handleHideDrawer={handleHideDrawer} />);
     wrapper.find("#closeMenuItem").simulate("click");
     expect(handleHideDrawer).toHaveBeenCalled();
+    expect(handleDisplayDrawer).not.toHaveBeenCalled();
     done();
   });
 });
