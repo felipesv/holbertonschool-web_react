@@ -60,18 +60,20 @@ describe('Test App.js', () => {
 
   it('verify that after calling handleDisplayDrawer, the state should now be true', (done) => {
     const wrapper = shallow(<App/>);
+    const instance = wrapper.instance();
     expectChai(wrapper.state().displayDrawer).to.equal(false);
-    wrapper.instance().handleDisplayDrawer();
+    instance.handleDisplayDrawer();
     expectChai(wrapper.state().displayDrawer).to.equal(true);
     done();
   });
 
   it('verify that after calling handleHideDrawer, the state is updated to be false', (done) => {
     const wrapper = shallow(<App/>);
+    const instance = wrapper.instance();
     expectChai(wrapper.state().displayDrawer).to.equal(false);
-    wrapper.instance().handleDisplayDrawer();
+    instance.handleDisplayDrawer();
     expectChai(wrapper.state().displayDrawer).to.equal(true);
-    wrapper.instance().handleHideDrawer();
+    instance.handleHideDrawer();
     expectChai(wrapper.state().displayDrawer).to.equal(false);
     done();
   });
