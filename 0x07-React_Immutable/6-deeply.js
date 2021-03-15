@@ -1,3 +1,5 @@
 import immutable from 'immutable';
 
-export const mergeDeeplyElements = (page1, page2) => immutable.Map(page1).mergeDeep(immutable.Map(page2));
+export default function mergeDeeplyElements(page1, page2) {
+  return immutable.Map(page1).mergeDeep(immutable.Map(page2));
+}
