@@ -13,5 +13,6 @@ export default function printBestStudents(object) {
         lastName: capitalize(item.lastName),
       }
   });
+
   console.log(data.toJS());
 }
