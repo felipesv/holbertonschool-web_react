@@ -8,7 +8,7 @@ export default function printBestStudents(object) {
   const data = Seq(object)
     .filter((item) => item.score > 70).map((item) => {
       return {
-        score: item.score,
+        ...item,
         firstName: capitalize(item.firstName),
         lastName: capitalize(item.lastName),
       }
