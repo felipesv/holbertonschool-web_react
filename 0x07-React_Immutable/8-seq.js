@@ -1,21 +1,17 @@
 import { Seq } from 'immutable';
 
-function capitalize(str) {
-  return str.trim().replace(/^\w/, (c) => c.toUpperCase());
-}
+export default function printBestStudents(object) {
+  const capitalize = (str) => {
+    return str.charAt(0).toUpperCase() + str.slice(1)
+  }
 
-export default function printBestStudents(grades) {
-  const students = Seq(grades);
-
-  console.log(students
-    .filter((student) => student.score > 70)
-    .map((student) => {
-      const { firstName, lastName } = student;
+  console.log(
+    Seq(object)
+    .filter((item) => item.score > 70).map((item) => {
       return {
-        ...student,
-        firstName: capitalize(firstName),
-        lastName: capitalize(lastName),
-      };
-    })
-    .toJS());
+        ...item,
+        firstName: capitalize(item.firstName),
+        lastName: capitalize(item.lastName),
+      }
+  }).toJS());
 }
