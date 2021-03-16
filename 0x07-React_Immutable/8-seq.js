@@ -2,7 +2,7 @@ import { Seq } from 'immutable';
 
 export default function printBestStudents(object) {
   const capitalize = (str) => {
-    return str.trim().replace(/^\w/, (c) => c.toUpperCase());
+    return str.charAt(0).toUpperCase() + str.slice(1)
   }
 
   const data = Seq(object)
@@ -11,7 +11,7 @@ export default function printBestStudents(object) {
         ...item,
         firstName: capitalize(item.firstName),
         lastName: capitalize(item.lastName),
-      }
+      };
   });
 
   console.log(data.toJS());
