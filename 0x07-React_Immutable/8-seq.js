@@ -4,15 +4,19 @@ function capitalize(str) {
   return str.charAt(0).toUpperCase() + str.slice(1)
 }
 
-export default function printBestStudents(object) {
-  const data = Seq(object)
-    .filter((item) => item.score > 70).map((item) => {
-      return {
-        ...item,
-        firstName: capitalize(item.firstName),
-        lastName: capitalize(item.lastName),
-      }
-  });
 
-  console.log(data.toJS());
+export default function printBestStudents(grades) {
+  const students = Seq(grades);
+
+  console.log(students
+    .filter((student) => student.score > 70)
+    .map((student) => {
+      const { firstName, lastName } = student;
+      return {
+        ...student,
+        firstName: capitalize(firstName),
+        lastName: capitalize(lastName),
+      };
+    })
+    .toJS());
 }
