@@ -1,12 +1,16 @@
 import immutable from 'immutable';
 
+const capitalize = (str) => {
+  return str.charAt(0).toUpperCase() + str.slice(1)
+}
+
 export default function printBestStudents(object) {
   const data = immutable.Seq(object)
     .filter((item) => item.score > 70).map((item) => {
       return {
         score: item.score,
-        firstName: item.firstName.charAt(0).toUpperCase() + item.firstName.slice(1),
-        lastName: item.lastName.charAt(0).toUpperCase() + item.lastName.slice(1),
+        firstName: capitalize(item.firstName),
+        lastName: capitalize(item.lastName),
       }
   });
   console.log(data.toJS());
