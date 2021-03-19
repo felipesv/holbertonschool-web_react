@@ -80,7 +80,7 @@ describe('Test notifications.js', () => {
   });
 
   it('Test to access the notifications with the id 5debd7642e815cd350407777', (done) => {
-    const data = normalizedData.entities.notification['5debd7642e815cd350407777'];
+    const data = normalizedData.entities.notifications['5debd7642e815cd350407777'];
     const result = {
       author: "5debd764f8452ef92346c772",
       context: "3068c575-d619-40af-bf12-dece1ee18dd3",
