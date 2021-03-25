@@ -29,6 +29,7 @@ describe('Test notifications.js', () => {
       const o2 = result[i];
       expectChai(Object.keys(o1).length === Object.keys(o2).length && Object.keys(o1).every(p => o1[p] === o2[p])).to.equal(true);
     }
+    expect(data).toEqual(expect.arrayContaining(result));
     done();
   });
 
